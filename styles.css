@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -14,8 +20,12 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
+}
+
+.image-title {
+  margin-bottom: 8px;
 }
 
 #imageContainer {
@@ -29,15 +39,14 @@ body {
 }
 
 img {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 450px;
+  max-height: 450px;
   object-fit: contain;
   border: 1px solid black;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
@@ -54,10 +63,11 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 8px;
 }
 
 #filterContainer {
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -87,7 +97,12 @@ button {
 }
 
 #jumpInput {
-  width: 100px;
+  width: auto;
   padding: 5px;
   margin-right: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1em;
 }

@@ -2750,6 +2750,7 @@ function showPair(index) {
   recipieElement.textContent = `${recipieNames[recipieIndex]}`;
 
   currentIndex = normalizedIndex;
+  jumpInput.value = currentIndex + 1;
   updateResultCount();
 }
 
