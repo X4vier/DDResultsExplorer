@@ -1,8 +1,17 @@
+const fs = require("fs");
+
+// Assume wins and losses are defined here
 const wins = [
   {
     us: "445_prompt_78-layout_8.png",
     opponent: "445_002_ilic_dolly_Tech_QA_job_listing_Instagram_post.png",
     model: "ilic_dolly",
+  },
+  {
+    us: "889_prompt_158-layout_8.png",
+    opponent:
+      "889_002_layered_base_Design_an_instagram_post_template_for_a_Harbolnas_.png",
+    model: "Miedinger-2layered_base",
   },
   {
     us: "889_prompt_158-layout_8.png",
@@ -133,6 +142,18 @@ const wins = [
     model: "layered_exp_decay_design_class_1",
   },
   {
+    us: "1965_prompt_172-layout_9.png",
+    opponent:
+      "1965_002_layered_exp_decay_design_class_1_sales_funnel_infographics_template_for_instagram_p.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1965_prompt_172-layout_9.png",
+    opponent:
+      "1965_002_layered_exp_decay_design_class_1_sales_funnel_infographics_template_for_instagram_p.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
     us: "1087_prompt_149-layout_1.png",
     opponent: "1087_prompt_149_1.jpg",
     model: "Leonardo.Ai: Phoenix",
@@ -195,6 +216,18 @@ const wins = [
     model: "Miedinger-2layered_base",
   },
   {
+    us: "1346_prompt_169-layout_1.png",
+    opponent:
+      "1346_002_layered_base_Instagram_post_promoting_a_Love_Yourself_workshop_.png",
+    model: "Miedinger-2layered_base",
+  },
+  {
+    us: "1346_prompt_169-layout_1.png",
+    opponent:
+      "1346_002_layered_base_Instagram_post_promoting_a_Love_Yourself_workshop_.png",
+    model: "Miedinger-2layered_base",
+  },
+  {
     us: "941_prompt_147-layout_1.png",
     opponent: "941_prompt148design1.jpeg",
     model: "MicrosoftDesignerBenchmark",
@@ -235,6 +268,18 @@ const wins = [
     model: "Miedinger-2layered_base",
   },
   {
+    us: "1354_prompt_26-layout_0.png",
+    opponent:
+      "1354_003_layered_base_farmers_market_looking_for_new_vendor_instagram_po.png",
+    model: "Miedinger-2layered_base",
+  },
+  {
+    us: "1354_prompt_26-layout_0.png",
+    opponent:
+      "1354_003_layered_base_farmers_market_looking_for_new_vendor_instagram_po.png",
+    model: "Miedinger-2layered_base",
+  },
+  {
     us: "1426_prompt_144-layout_3.png",
     opponent:
       "1426_003_layered_base_Ecofriendly_product_testimonial_minimal_Instagram_.png",
@@ -244,6 +289,18 @@ const wins = [
     us: "1165_prompt_199-layout_10.png",
     opponent: "1165_prompt_199_2.jpg",
     model: "Leonardo.Ai: Phoenix",
+  },
+  {
+    us: "1781_prompt_43-layout_5.png",
+    opponent:
+      "1781_003_layered_exp_decay_design_class_1_Create_an_instagram_post_of_a_vision_board_in_a_jo.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1781_prompt_43-layout_5.png",
+    opponent:
+      "1781_003_layered_exp_decay_design_class_1_Create_an_instagram_post_of_a_vision_board_in_a_jo.png",
+    model: "layered_exp_decay_design_class_1",
   },
   {
     us: "1781_prompt_43-layout_5.png",
@@ -286,6 +343,24 @@ const wins = [
     model: "Miedinger-2layered_base",
   },
   {
+    us: "1500_prompt_22-layout_4.png",
+    opponent:
+      "1500_001_layered_base_Create_an_Instagram_post_highlighting_a_specific_P.png",
+    model: "Miedinger-2layered_base",
+  },
+  {
+    us: "1683_prompt_134-layout_3.png",
+    opponent:
+      "1683_003_layered_mse_design_class_Design_an_Instagram_post_promoting_a_Galentines_Da.png",
+    model: "Miedinger-2layered_mse_design_class",
+  },
+  {
+    us: "1683_prompt_134-layout_3.png",
+    opponent:
+      "1683_003_layered_mse_design_class_Design_an_Instagram_post_promoting_a_Galentines_Da.png",
+    model: "Miedinger-2layered_mse_design_class",
+  },
+  {
     us: "1683_prompt_134-layout_3.png",
     opponent:
       "1683_003_layered_mse_design_class_Design_an_Instagram_post_promoting_a_Galentines_Da.png",
@@ -326,6 +401,18 @@ const wins = [
     opponent:
       "906_002_ilic_dolly_top_5_restaurant_recommendations_for_Mothers_Day_brunch_in_my_city_instagram_post.png",
     model: "ilic_dolly",
+  },
+  {
+    us: "950_prompt_175-layout_9.png",
+    opponent:
+      "950_v0_q175_r3_thumbnails_2024-07-31_dg-7afa9cd3-463a-4990-97c9-dc3990aeb990_0.png",
+    model: "Compositional Magic Design",
+  },
+  {
+    us: "950_prompt_175-layout_9.png",
+    opponent:
+      "950_v0_q175_r3_thumbnails_2024-07-31_dg-7afa9cd3-463a-4990-97c9-dc3990aeb990_0.png",
+    model: "Compositional Magic Design",
   },
   {
     us: "950_prompt_175-layout_9.png",
@@ -410,6 +497,18 @@ const wins = [
     model: "ilic_dolly",
   },
   {
+    us: "449_prompt_20-layout_3.png",
+    opponent:
+      "449_004_ilic_dolly_Design_an_Instagram_post_with_a_quiz_format_to_educate_followers_about_LGBTQ_rights_and_history.png",
+    model: "ilic_dolly",
+  },
+  {
+    us: "449_prompt_20-layout_3.png",
+    opponent:
+      "449_004_ilic_dolly_Design_an_Instagram_post_with_a_quiz_format_to_educate_followers_about_LGBTQ_rights_and_history.png",
+    model: "ilic_dolly",
+  },
+  {
     us: "1013_prompt_139-layout_0.png",
     opponent:
       "1013_004_layered_exp_decay_design_class_1_Charity_run_colorful_graphics_Instagram_post.png",
@@ -429,6 +528,18 @@ const wins = [
     us: "1041_prompt_43-layout_9.png",
     opponent: "1041_prompt44design4.jpeg",
     model: "MicrosoftDesignerBenchmark",
+  },
+  {
+    us: "1007_prompt_38-layout_0.png",
+    opponent:
+      "1007_002_layered_exp_decay_design_class_1_podcast_guest_announcement_instagram_post_with_pro.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1007_prompt_38-layout_0.png",
+    opponent:
+      "1007_002_layered_exp_decay_design_class_1_podcast_guest_announcement_instagram_post_with_pro.png",
+    model: "layered_exp_decay_design_class_1",
   },
   {
     us: "1007_prompt_38-layout_0.png",
@@ -533,6 +644,18 @@ const wins = [
     opponent:
       "1869_003_layered_exp_decay_design_class_1_Can_you_design_a_post_for_my_instagram_page_where_.png",
     model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "521_prompt_194-layout_2.png",
+    opponent:
+      "521_002_ilic_dolly_Create_an_instagram_post_State_Compliance_In_what_ways_should_federal_agencies_be_required_to_respect_state_laws_and_businesses_that_comply_with_the.png",
+    model: "ilic_dolly",
+  },
+  {
+    us: "521_prompt_194-layout_2.png",
+    opponent:
+      "521_002_ilic_dolly_Create_an_instagram_post_State_Compliance_In_what_ways_should_federal_agencies_be_required_to_respect_state_laws_and_businesses_that_comply_with_the.png",
+    model: "ilic_dolly",
   },
   {
     us: "521_prompt_194-layout_2.png",
@@ -695,6 +818,11 @@ const wins = [
     model: "MicrosoftDesignerBenchmark",
   },
   {
+    us: "423_prompt_44-layout_9.png",
+    opponent: "423_prompt45design4.jpeg",
+    model: "MicrosoftDesignerBenchmark",
+  },
+  {
     us: "1051_prompt_77-layout_0.png",
     opponent:
       "1051_004_layered_mse_design_class_I_am_creating_an_instagram_post_for_my_company_and.png",
@@ -722,6 +850,12 @@ const wins = [
     opponent:
       "946_001_layered_base_Create_a_post_to_promote_Melaleuca_the_Wellness_co.png",
     model: "Miedinger-2layered_base",
+  },
+  {
+    us: "534_prompt_165-layout_9.png",
+    opponent:
+      "534_004_ilic_dolly_Create_an_instagram_template_with_a_fantasy_hell_feeling_inspired_by_dia_de_los_muertos.png",
+    model: "ilic_dolly",
   },
   {
     us: "534_prompt_165-layout_9.png",
@@ -781,6 +915,18 @@ const wins = [
     opponent:
       "954_003_layered_base_Minimalist_background_for_quotes_forinstagram_post.png",
     model: "Miedinger-2layered_base",
+  },
+  {
+    us: "975_prompt_44-layout_1.png",
+    opponent:
+      "975_004_ilic_dolly_Create_a_post_to_promote_Melaleuca_the_Wellness_company.png",
+    model: "ilic_dolly",
+  },
+  {
+    us: "975_prompt_44-layout_1.png",
+    opponent:
+      "975_004_ilic_dolly_Create_a_post_to_promote_Melaleuca_the_Wellness_company.png",
+    model: "ilic_dolly",
   },
   {
     us: "975_prompt_44-layout_1.png",
@@ -1040,6 +1186,18 @@ const wins = [
     model: "ilic_dolly",
   },
   {
+    us: "1037_prompt_193-layout_1.png",
+    opponent:
+      "1037_001_ilic_dolly_Create_a_real_estate_post_about_how_sellers_would_want_to_list_their_house_with_The_Vermont_Sales_Group_Stratton_Mountain_VT.png",
+    model: "ilic_dolly",
+  },
+  {
+    us: "1037_prompt_193-layout_1.png",
+    opponent:
+      "1037_001_ilic_dolly_Create_a_real_estate_post_about_how_sellers_would_want_to_list_their_house_with_The_Vermont_Sales_Group_Stratton_Mountain_VT.png",
+    model: "ilic_dolly",
+  },
+  {
     us: "891_prompt_18-layout_6.png",
     opponent:
       "891_002_ilic_dolly_create_a_instagram_post_bright_30_off_for_product_starshaped_callout.png",
@@ -1230,6 +1388,16 @@ const wins = [
     model: "Leonardo.Ai: Phoenix",
   },
   {
+    us: "1108_prompt_27-layout_8.png",
+    opponent: "1108_prompt_27_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
+    us: "1108_prompt_27-layout_8.png",
+    opponent: "1108_prompt_27_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
     us: "998_prompt_91-layout_9.png",
     opponent:
       "998_004_layered_base_instagram_post_to_promote_ballet_movies_at_the_sar.png",
@@ -1240,6 +1408,16 @@ const wins = [
     opponent:
       "1079_003_layered_exp_decay_design_class_1_Create_an_instagram_post_of_a_vision_board_in_a_jo.png",
     model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "995_prompt_153-layout_6.png",
+    opponent: "995_prompt154design2.jpeg",
+    model: "MicrosoftDesignerBenchmark",
+  },
+  {
+    us: "995_prompt_153-layout_6.png",
+    opponent: "995_prompt154design2.jpeg",
+    model: "MicrosoftDesignerBenchmark",
   },
   {
     us: "995_prompt_153-layout_6.png",
@@ -1275,6 +1453,18 @@ const wins = [
     opponent:
       "960_002_ilic_dolly_I_am_creating_an_instagram_post_for_my_company_and_need_an_infographic_Specifically_I_am_posting_about_blockchain_custody.png",
     model: "ilic_dolly",
+  },
+  {
+    us: "1984_prompt_168-layout_3.png",
+    opponent:
+      "1984_003_layered_exp_decay_design_class_1_Favorite_smoothie_recipe_colorful_Instagram_post.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1984_prompt_168-layout_3.png",
+    opponent:
+      "1984_003_layered_exp_decay_design_class_1_Favorite_smoothie_recipe_colorful_Instagram_post.png",
+    model: "layered_exp_decay_design_class_1",
   },
   {
     us: "1984_prompt_168-layout_3.png",
@@ -1393,6 +1583,16 @@ const wins = [
     opponent:
       "1024_003_layered_mse_design_class_end_of_financial_year_deals_instagram_post_square_.png",
     model: "Miedinger-2layered_mse_design_class",
+  },
+  {
+    us: "992_prompt_190-layout_8.png",
+    opponent: "992_prompt191design4.jpeg",
+    model: "MicrosoftDesignerBenchmark",
+  },
+  {
+    us: "992_prompt_190-layout_8.png",
+    opponent: "992_prompt191design4.jpeg",
+    model: "MicrosoftDesignerBenchmark",
   },
   {
     us: "992_prompt_190-layout_8.png",
@@ -1589,9 +1789,26 @@ const losses = [
     model: "CanvaMarketplaceBenchmark",
   },
   {
+    us: "18_prompt_22-layout_5.png",
+    opponent: "18_prompt23design4.png",
+    model: "CanvaMarketplaceBenchmark",
+  },
+  {
     us: "1325_prompt_13-layout_2.png",
     opponent: "1325_prompt_13_3.jpg",
     model: "Leonardo.Ai: Phoenix",
+  },
+  {
+    us: "982_prompt_37-layout_10.png",
+    opponent:
+      "982_v0_q37_r2_thumbnails_2024-07-31_dg-46f4fb4e-5c68-4203-aa28-33864f8ec48b_0.png",
+    model: "Compositional Magic Design",
+  },
+  {
+    us: "982_prompt_37-layout_10.png",
+    opponent:
+      "982_v0_q37_r2_thumbnails_2024-07-31_dg-46f4fb4e-5c68-4203-aa28-33864f8ec48b_0.png",
+    model: "Compositional Magic Design",
   },
   {
     us: "982_prompt_37-layout_10.png",
@@ -1604,6 +1821,18 @@ const losses = [
     opponent:
       "1923_002_layered_exp_decay_design_class_1_Instagram_post_promoting_a_Love_Yourself_workshop_.png",
     model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1016_prompt_189-layout_2.png",
+    opponent:
+      "1016_003_ilic_dolly_help_me_design_an_Instagram_post_for_handmade_wooden_toys_as_perfect_hanukkah_gifts.png",
+    model: "ilic_dolly",
+  },
+  {
+    us: "1016_prompt_189-layout_2.png",
+    opponent:
+      "1016_003_ilic_dolly_help_me_design_an_Instagram_post_for_handmade_wooden_toys_as_perfect_hanukkah_gifts.png",
+    model: "ilic_dolly",
   },
   {
     us: "1016_prompt_189-layout_2.png",
@@ -1658,6 +1887,12 @@ const losses = [
     model: "layered_exp_decay_design_class_1",
   },
   {
+    us: "1019_prompt_80-layout_4.png",
+    opponent:
+      "1019_001_layered_exp_decay_design_class_1_Design_an_Instagram_post_featuring_a_diverse_group.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
     us: "899_prompt_143-layout_3.png",
     opponent:
       "899_v0_q143_r0_thumbnails_2024-07-31_dg-0eab5987-ddc7-44f1-ae4a-cb8cd81fd00a_0.png",
@@ -1680,9 +1915,27 @@ const losses = [
     model: "Miedinger-2layered_base",
   },
   {
+    us: "1523_prompt_102-layout_4.png",
+    opponent:
+      "1523_004_layered_base_instagram_post_to_announce_a_bubble_tea_and_collag.png",
+    model: "Miedinger-2layered_base",
+  },
+  {
     us: "973_prompt_38-layout_8.png",
     opponent:
       "973_v0_q38_r3_thumbnails_2024-07-31_dg-12775268-901d-488e-81d3-4dba39e3be30_0.png",
+    model: "Compositional Magic Design",
+  },
+  {
+    us: "994_prompt_131-layout_3.png",
+    opponent:
+      "994_v0_q131_r3_thumbnails_2024-07-31_dg-3b9d17e1-2e65-4533-a594-5d197d453dd9_0.png",
+    model: "Compositional Magic Design",
+  },
+  {
+    us: "994_prompt_131-layout_3.png",
+    opponent:
+      "994_v0_q131_r3_thumbnails_2024-07-31_dg-3b9d17e1-2e65-4533-a594-5d197d453dd9_0.png",
     model: "Compositional Magic Design",
   },
   {
@@ -1766,6 +2019,11 @@ const losses = [
     model: "MicrosoftDesignerBenchmark",
   },
   {
+    us: "412_prompt_174-layout_0.png",
+    opponent: "412_prompt175design3.jpeg",
+    model: "MicrosoftDesignerBenchmark",
+  },
+  {
     us: "337_prompt_61-layout_0.png",
     opponent: "337_prompt62design4.jpeg",
     model: "MicrosoftDesignerBenchmark",
@@ -1786,6 +2044,18 @@ const losses = [
     opponent:
       "1374_003_layered_base_Create_a_visually_appealing_Instagram_post_explain.png",
     model: "Miedinger-2layered_base",
+  },
+  {
+    us: "1049_prompt_91-layout_1.png",
+    opponent:
+      "1049_002_layered_exp_decay_design_class_1_instagram_post_to_promote_ballet_movies_at_the_sar.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1049_prompt_91-layout_1.png",
+    opponent:
+      "1049_002_layered_exp_decay_design_class_1_instagram_post_to_promote_ballet_movies_at_the_sar.png",
+    model: "layered_exp_decay_design_class_1",
   },
   {
     us: "1049_prompt_91-layout_1.png",
@@ -1819,6 +2089,16 @@ const losses = [
     us: "1090_prompt_159-layout_4.png",
     opponent: "1090_prompt160design2.jpeg",
     model: "MicrosoftDesignerBenchmark",
+  },
+  {
+    us: "1263_prompt_85-layout_1.png",
+    opponent: "1263_prompt_85_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
+    us: "1263_prompt_85-layout_1.png",
+    opponent: "1263_prompt_85_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
   },
   {
     us: "1263_prompt_85-layout_1.png",
@@ -1885,6 +2165,11 @@ const losses = [
     model: "MicrosoftDesignerBenchmark",
   },
   {
+    us: "1003_prompt_63-layout_10.png",
+    opponent: "1003_prompt64design2.jpeg",
+    model: "MicrosoftDesignerBenchmark",
+  },
+  {
     us: "1084_prompt_20-layout_10.png",
     opponent: "1084_prompt21design4.jpeg",
     model: "MicrosoftDesignerBenchmark",
@@ -1923,6 +2208,11 @@ const losses = [
     model: "CanvaMarketplaceBenchmark",
   },
   {
+    us: "977_prompt_149-layout_7.png",
+    opponent: "977_prompt150design2.png",
+    model: "CanvaMarketplaceBenchmark",
+  },
+  {
     us: "1784_prompt_189-layout_7.png",
     opponent:
       "1784_003_layered_exp_decay_design_class_1_help_me_design_an_Instagram_post_for_handmade_wood.png",
@@ -1934,10 +2224,25 @@ const losses = [
     model: "Leonardo.Ai: Phoenix",
   },
   {
+    us: "944_prompt_46-layout_9.png",
+    opponent: "944_prompt_46_0.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
     us: "1065_prompt_45-layout_0.png",
     opponent:
       "1065_003_ilic_dolly_white_and_green_illustrative_cocktail_promotions_instagram_post.png",
     model: "ilic_dolly",
+  },
+  {
+    us: "1008_prompt_83-layout_5.png",
+    opponent: "1008_prompt84design4.png",
+    model: "CanvaMarketplaceBenchmark",
+  },
+  {
+    us: "1008_prompt_83-layout_5.png",
+    opponent: "1008_prompt84design4.png",
+    model: "CanvaMarketplaceBenchmark",
   },
   {
     us: "1008_prompt_83-layout_5.png",
@@ -1987,6 +2292,12 @@ const losses = [
     opponent:
       "534_004_ilic_dolly_Create_an_instagram_template_with_a_fantasy_hell_feeling_inspired_by_dia_de_los_muertos.png",
     model: "ilic_dolly",
+  },
+  {
+    us: "1817_prompt_196-layout_6.png",
+    opponent:
+      "1817_003_layered_exp_decay_design_class_1_Please_create_a_instagram_post_with_plenty_of_ques.png",
+    model: "layered_exp_decay_design_class_1",
   },
   {
     us: "1817_prompt_196-layout_6.png",
@@ -2102,6 +2413,12 @@ const losses = [
     model: "Compositional Magic Design",
   },
   {
+    us: "803_prompt_65-layout_9.png",
+    opponent:
+      "803_v0_q65_r2_thumbnails_2024-07-31_dg-4ffa8cec-5625-4af0-acd1-cdcc2466cb22_0.png",
+    model: "Compositional Magic Design",
+  },
+  {
     us: "905_prompt_136-layout_1.png",
     opponent: "905_prompt_136_2.jpg",
     model: "Leonardo.Ai: Phoenix",
@@ -2155,6 +2472,11 @@ const losses = [
     model: "Leonardo.Ai: Phoenix",
   },
   {
+    us: "963_prompt_179-layout_8.png",
+    opponent: "963_prompt_179_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
     us: "1077_prompt_37-layout_1.png",
     opponent:
       "1077_v0_q37_r0_thumbnails_2024-07-31_dg-4172b10d-bc3d-457c-b0f5-bd64f50cb27b_0.png",
@@ -2181,6 +2503,18 @@ const losses = [
     us: "936_prompt_32-layout_9.png",
     opponent: "936_prompt_32_1.jpg",
     model: "Leonardo.Ai: Phoenix",
+  },
+  {
+    us: "1098_prompt_119-layout_1.png",
+    opponent:
+      "1098_003_layered_exp_decay_design_class_1_Instagram_post_comparing_regular_prices_to_Singles.png",
+    model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1098_prompt_119-layout_1.png",
+    opponent:
+      "1098_003_layered_exp_decay_design_class_1_Instagram_post_comparing_regular_prices_to_Singles.png",
+    model: "layered_exp_decay_design_class_1",
   },
   {
     us: "1098_prompt_119-layout_1.png",
@@ -2389,6 +2723,12 @@ const losses = [
     model: "ilic_dolly",
   },
   {
+    us: "479_prompt_40-layout_8.png",
+    opponent:
+      "479_004_ilic_dolly_Instagram_post_celebrating_my_friend_group_with_a_scrapbook_photo_collage.png",
+    model: "ilic_dolly",
+  },
+  {
     us: "97_prompt_145-layout_4.png",
     opponent: "97_prompt146design2.png",
     model: "CanvaMarketplaceBenchmark",
@@ -2415,6 +2755,12 @@ const losses = [
     opponent:
       "991_004_layered_exp_decay_design_class_1_Create_an_Instagram_post_template_that_will_accomm.png",
     model: "layered_exp_decay_design_class_1",
+  },
+  {
+    us: "1599_prompt_127-layout_0.png",
+    opponent:
+      "1599_001_layered_mse_design_class_promoting_a_new_Lacquer_ofnail_polish_collection_i.png",
+    model: "Miedinger-2layered_mse_design_class",
   },
   {
     us: "1599_prompt_127-layout_0.png",
@@ -2481,332 +2827,49 @@ const losses = [
     model: "Leonardo.Ai: Phoenix",
   },
   {
+    us: "1035_prompt_55-layout_4.png",
+    opponent: "1035_prompt_55_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
+    us: "1035_prompt_55-layout_4.png",
+    opponent: "1035_prompt_55_1.jpg",
+    model: "Leonardo.Ai: Phoenix",
+  },
+  {
     us: "1244_prompt_129-layout_10.png",
     opponent: "1244_prompt_129_2.jpg",
     model: "Leonardo.Ai: Phoenix",
   },
 ];
-
-const goldenPrompts200 = [
-  `Help me design an Instagram post celebrating the fact that I now have a thousand followers`,
-  `For Argentina, design an Instagram post showcasing special edition foods launched by local businesses to support the national women's footbal team`,
-  `Ivory brown modern hello autumn photo collage animated instagram post`,
-  `leadership development workshop instagram post in corporate colors`,
-  `instagram post explaining how our business supports LGBTQ+ love and relationships year-round`,
-  `an instagram post finance Early Career Credit Analyst Financial Analyst Loan Officer Compliance Analyst Mid-Career Commercial Banker Risk Manager`,
-  `design me an instagram post for online physio free consultations in white black and orange`,
-  `Make an instagram post showcasing the best Victoria Day events and fireworks displays in your area for 2023`,
-  `Pottery studio creations earthy Instagram post`,
-  `6 point circle instagram post showing 6 different things`,
-  `Create an Instagram post congratulating a specific athlete or team on their Paralympic victory, featuring their photo and a brief description of their achievement`,
-  `instagram post for selling digital marketing course`,
-  `instagram post computer graphics card carousel post`,
-  `Instagram post announcing an International Women's Day event, including date, time, and key speakers`,
-  `design a instagram post showing business hours for a tarot reader. use a vintage serif font`,
-  `an instagram post for my inclusive personal training business`,
-  `instagram postwhite background with dash of colour`,
-  `Create a visually appealing Instagram post explaining the connection between hormones and mental health`,
-  `create a instagram post bright 30% off for product star-shaped callout`,
-  `can we create a instagram post for a grand opening`,
-  `Design an Instagram post with a quiz format to educate followers about LGBTQ+ rights and history`,
-  `Give me an instagram template to promote a discount on a book`,
-  `Create an Instagram post highlighting a specific Paralympic sport, explaining how it's played and any adaptive equipment used`,
-  `Create an Instagram post promoting a webinar on "Creating Accessible User Experiences" for GAAD`,
-  `I'd like to create an instagram post about summer skincare`,
-  `Make me an instagram post with an image of a director shooting a commercial`,
-  `farmers market looking for new vendor instagram post`,
-  `Develop a an instagram post for Harbolnas, explaining the event to international audiences`,
-  `instagram post as like share and follow for bussiness account professional style`,
-  `create an instagram post with the headline "The obesity epidemic in the US started at almost the exact same time the low-fat dietary guidelines were published" with room for a graph`,
-  `women's support group or network instagram post`,
-  `a heartfelt Mother's Day greeting instagram post with a personal photo and touching message about my mom`,
-  `Instagram post announcing a watch party for a major Olympic event`,
-  `Create a social media post for Instagram showing somebody barefoot in the desert walking against the wind`,
-  `Design an instagram post for cancer season`,
-  `educational Instagram post explaining the significance of National Indigenous People's Day`,
-  `showcase global initiatives working to improve girls' access to education in an Instagram post`,
-  `Can you create an instagram post with Orange and Klein blue colors at the top with some shapes and red and black at the bottom with some shapes`,
-  `podcast guest announcement instagram post with profile photo`,
-  `can we create a post for a farmer’s market`,
-  `Instagram post celebrating my friend group with a scrapbook photo collage`,
-  `Create a Under Contract instagram post: 298 West Vally Road, Honolulu Use dark blue and white color scheme`,
-  `create an instagram post about being authentic`,
-  `Create an instagram post of a vision board in a journal and blank space in the middle for text. Use Pastel Colours.`,
-  `Create a post to promote Melaleuca, the Wellness company`,
-  `white and green illustrative cocktail promotions instagram post`,
-  `instagram post photo sharing a childrens book to everyone`,
-  `design an instagram post advertising a youth advisory council volunteer opportunity`,
-  `make a eye catching colourful instagram post for purfleet military muse3um`,
-  `Make an instagram post for national ice cream day featuring Joe biden`,
-  `create an engaging instagram post on world yoga day with green header and footer`,
-  `Create an instagram post to market a mobile bookstore`,
-  `i provide AI chatbots to hotels to handle their customer queries. I want to make an instagram post about promoting my product/service. use navy and gold colour theme`,
-  `media relations masterclass instagram post with expert panel`,
-  `blue & yellow Technical marketing agency instagram post`,
-  `tech talk event instagram post with blue and white minimalist design`,
-  `Create an Instagram post explaining the history and significance of Saint-Jean-Baptiste Day for those unfamiliar with the holiday. Use an image with text overlay`,
-  `Hospitality job listing Instagram post`,
-  `top 5 restaurant recommendations for Mother's Day brunch in my city instagram post`,
-  `Generate instagram post happy diwali`,
-  `breaking news financial update instagram post with stock market graph`,
-  `Instagram post showcasing your flower shop's Mother's Day bouquet collection, highlighting a special discount for early orders.`,
-  `Make ma an isntagram post advertising a new yoga instructor`,
-  `Diwali kids celebration Instagram post`,
-  `Happy birthday instagram post for my freind Andie. craete an image with a boat on a lek`,
-  `Create a square instagram post of an image of a brain. Include a quote about mental health in the workplace.`,
-  `Instagram post celebrating a "Woman of the Year" in the healthcare industry`,
-  `White, Blue and yellow Char Dham Yatra travel agency instagram post (A5)`,
-  `Design an Instagram post featuring your handcrafted jewelry Mother's Day collection, with close-up images of unique pieces.`,
-  `design instagram post "my physio told me the pain is in my head" comic-style`,
-  `Instagram post showcasing the benefits of gender diversity in the workplace`,
-  `Create instagram post calling for support for people going through menopause`,
-  `Instagram post highlighting women breaking barriers in traditionally male-dominated fields`,
-  `instagram post for a medical center providing free consultations on world hepatitis day`,
-  `Art exhibition abstract Instagram post`,
-  `EV startup auto show Instagram post`,
-  `Can you make an instagram post featuring a ten-minute core workout, including an exercise.`,
-  `I am creating an instagram post for my company and need an infographic. Specifically I am posting about blockchain custody`,
-  `Tech QA job listing Instagram post`,
-  `Solar panel installation company advertising insta post`,
-  `Design an Instagram post featuring a diverse group of women, emphasizing the inclusive nature of women's empowerment`,
-  `Instagram post showcasing your restaurant's Mother's Day brunch menu, including a complimentary mimosa for moms.`,
-  `instagram post with someone giving an online presentationpresentation screen`,
-  `templatefor instagram post with ramadan theme`,
-  `Develop an instagram post highlighting Black Friday beauty deals with before-and-after transformation`,
-  `Make me a post to reveal raffle prizes, themed around Carnival`,
-  `Sustainable camping tips Instagram post`,
-  `podcast episode recap instagram post with bullet points`,
-  `end of financial year deals instagram post square animated`,
-  `design an instagram post to promote my custom designed party favors teal and orange`,
-  `write a just sold instagram post for 172 Upper Horse Lane, C-19, Narmham.  Sold for $490,000 description: This beautifully renovated home nestled in the tranquil setting of Bear Creek presents a rare opportunity for those seeking comfort and adventure in Vermont. Boasting three bedrooms and three baths, including two en-suite baths upstairs and a bedroom and bath on the main level, it offers ample space for relaxation and privacy. The focal point of the living/dining area is the magnificent stone fireplace, ensuring cozy gatherings, with unlimited firewood conveniently delivered to you and stacked in the wood closet right outside the front door. Located just minutes from the slopes of Stratton Mountain, outdoor enthusiasts will delight in the proximity to all-season enjoyment. During the winter months, take advantage of the convenient shuttle service to Stratton. But the allure of this home extends beyond winter sports. Spring, summer, and fall beckon with tennis matches on the courts and children exploring the playground. Cool off in the inviting swimming pool during the warmer months, or gather around the fire pit for cozy evenings throughout the year. Moreover, the present of a full-time caretaker ensures that every detail is taken care of, allowing you to fully immerse yourself in the Horse Creek lifestyle. Please make it that Martton Sales and Rentals can sell your home too`,
-  `instagram post to promote ballet movies at the sarasota opera house`,
-  `June 21 2024 indigenous peoples day instagram posts`,
-  `Give me a template for an instagram post announcing my Drumap CMS training session. The training will cover a range of topics, including content creation and editing, understanding Drupal's structure, working with modules and themes, and interpreting website analytics. `,
-  `corporate training seminar instagram post featuring group activities`,
-  `Make an Instagram post showcasing your company's commitment to digital accessibility, featuring new accessible features or services`,
-  `World menopause day instagram post raising awareness for women going through menopause through the World Menopause Day`,
-  `Instagram post announcing a Mother's Day spa package, perfect for gifting or for moms to treat themselves`,
-  `Design an Instagram post featuring "God Save the Queen" lyrics and their connection to Victoria Day, incorporating red themes and royal imagery.`,
-  `how to protect your stamina in birth carousel instagram posts`,
-  `mustard and gray business conference highlights instagram post`,
-  `Community clean-up celebration Instagram post`,
-  `instagram post to announce a bubble tea and collage collaboration`,
-  `can we make a post about going to texas tech`,
-  `Mother's Day self-care gift guide, with products available at your store instagram post`,
-  `Motivational Monday nature Instagram post`,
-  `design a facebook post to recruit fosters for a small dog rescue`,
-  `Local music festival retro vinyl Instagram post`,
-  `Create an instagram post to showcase my new romance novel set on Gran Canaria`,
-  `Create an instagram post about giving Tuesday for a dog rescue.`,
-  `a heartwarming instagram post wishing a happy birthday`,
-  `blue fantasy instagram post announcing giveaway winners with a handwritten font`,
-  `Minimalist background for quotes forinstagram post`,
-  `instagram post event water meet and greet date time photo`,
-  `a vintage-inspired baptismal thank you instagram post thanking the attendees`,
-  `Instagram post featuring inspiring quotes from both male and female football players about determination and winning`,
-  `Weekend farmers market fresh produce Instagram post`,
-  `templates for business celebrations for instagram post`,
-  `New vegan cafe delicious dishes Instagram post`,
-  `Instagram post comparing regular prices to Singles Day sale prices`,
-  `blue and purple retro illustrative Instagram post announcing a local Pride parade`,
-  `Create an instagram post about dogs being man's best friend`,
-  `I need to make an instagram post meme. You will help me. The meme is to post on our business social media account. We want it to be about Bria. Bria is our AI assistant that helps Airbnb hosts and Airbnb management companies answer guest questions faster without having to stress or be on their phones 24/7. Bria replies instantly 24/7 which helps with guest satisfaction. She also gives local recommendations about activities and restaurants.`,
-  `Instagram post showcasing the current medal tally for the top 5 countries in the Olympics, using flag icons and medal emojis`,
-  `instagram post highlighting our number one achivement`,
-  `orange green brown realistic wildlife birthday invitation instagram post`,
-  `Design an instagram post celebrating Fête nationale du Québec, incorporating the Quebec flag and natural scenery.`,
-  `promoting a new Lacquer ofnail polish collection instagram post`,
-  `global news update instagram post with world map graphic`,
-  `I would like to create post about the importance of self-care to post to instagram`,
-  `I want to create a post to sell my house 356 Seaview Ln, Miami, FL 32746. This should be used to post on instagram`,
-  `instagram post design with a beige minimalist theme for fashion influencers`,
-  `Handmade jewelry "Jools" chic Instagram post`,
-  `laptop product launch templates for instagram post`,
-  `Design an Instagram post promoting a "Galentine's Day" special for best friends at a spa with stacked images`,
-  `Create an instagram post template for a planner and journal business with geometric sans-serif fonts`,
-  `Design an instagram post advertising a Christmas wine tasting and dinner event on December 18, 6-8pm. RSVP link in bio. Pequeños tapas wine bar`,
-  `Red and white photo-centric tattoo business instagram post`,
-  `carousel instagram posts for lead generation for real estate properties`,
-  `Charity run colorful graphics Instagram post`,
-  `happy 4th of july blue and red minimalist instagram post`,
-  `hiring instagram post for sales man and tele caller`,
-  `cream and brown illustrative simple tips to be successful instagram post`,
-  `an instagram post introducing a brand new collection`,
-  `Eco-friendly product testimonial minimal Instagram post`,
-  `instagram post announcing Park Bank as returning sponsor`,
-  `Black and beige minimalistic simple instagram post`,
-  `Design a futuristic neon Cyber Monday Instagram post template for fitness equipment sales`,
-  `can we create a 4th of july instagram post`,
-  `adopted family love instagram post`,
-  `a vibrant instagram post highlighting our rakshabandhan on agriculture product marketing summiti`,
-  `Make an Instagram post featuring a series of quotes from employees about what inclusion means to them in a grid layout`,
-  `Summer yoga retreat beach Instagram post`,
-  `Create an instagram post of friends smiling and laughing with drinks at a bar. The copy should say “Bear’s Bar Now Open”. fun vibes`,
-  `Make an Instagram post announcing your company's donation drive for refugees, including how followers can participate. The number is big`,
-  `Design a heartwarming Instagram post showcasing the impact of donations for Giving Tuesday`,
-  `instagram post for advertising invitation cards desginer`,
-  `instagram post video for communication skill and self developement`,
-  `Design an instagram post template for a "Harbolnas Haul" series featuring influencers showing off their purchases`,
-  `elegant high ticket international law instagram post primal`,
-  `instagram post showcasing earrings and bangles repeating circular shapes`,
-  `inspiring message instagram post support for all paralympic athletes sportsmanship and perseverance`,
-  `5 photo collage with shades of purple instagram posts`,
-  `create instagram post - Elevate Physiotherapy are proving sports massage, dry needling & taping for a cross fit competition`,
-  `Can you design a post for my instagram page where I want to promote the swimsuits I design? With geometric patterns`,
-  `Create an instagram template with a fantasy hell feeling inspired by dia de los muertos`,
-  `collage style instagram post celebrating friend's birthday(rectangular)`,
-  `Instagram post showcasing creative and budget-friendly date ideas for couples`,
-  `Favorite smoothie recipe colorful Instagram post`,
-  `Instagram post promoting a "Love Yourself" workshop or event, focusing on self-care and personal growth`,
-  `Help me make an Instagram post for the end of the year in the style of Spotify Wrapped.`,
-  `instagram post to communicate messaging about an insight about sponsorship and collaboration with hand-drawn icons`,
-  `sales funnel infographics template for instagram post`,
-  `Create an instagram post letting people know if they are turning 26 they need to have their own healt insurance plan away from their parents`,
-  `Mother's Day themed recipe that followers can make with or for their moms instagram post`,
-  `Can we create a summer camp instagram post for athletes`,
-  `Instagram post with ideas for a virtual Mother's Day celebration, ideal for families separated by distance`,
-  `I'd like to create an instagram post that's bright and fun about balanced nutrition`,
-  `best friend appreciation Instagram post, featuring our favorite photos together and inside joke about potatoes`,
-  `Cozy reading nook, books, quote Instagram post`,
-  `Create an instagram post template for a planner and journal business with geometric sans-serif fonts with overlapping images`,
-  `Create a professional Open House instagram post for 4 Woodhouse Road, Barnham, VT. Use dark blue and white for color scheme`,
-  `special Valentine's Day promotion for couples at my hair salon instagram post with watercolour background`,
-  `can we create an instagram post for acceptance of master’s programs`,
-  `Create an image for an instagram post about the 4th of july. make it calssic and professional`,
-  `can we create an instagram post for national ice cream day`,
-  `Children's storytime library whimsical Instagram post`,
-  `Local theater production Sydney Instagram post`,
-  `Anniversary sale featuring products instagram post`,
-  `help me design an Instagram post for handmade wooden toys as perfect hanukkah gifts`,
-  `Help me design an Instagram post for my University's football rivalry. It's between Lehigh University and Lafayette College and is called "The Rivalry."`,
-  `Create an Instagram post template that will accommodate a collage of 5 photos`,
-  `Bright and lively instagram post free cofee at laundromat show happy customers`,
-  `Create a real estate post about how sellers would want to list their house with The Vermont Sales Group Stratton Mountain VT`,
-  `Create an instagram post State Compliance: "In what ways should federal agencies be required to respect state laws and businesses that comply with them"`,
-  `business company profile canvas template instagram post three-row layout`,
-  `Please create a instagram post with plenty of question marks pattern`,
-  `create an instagram post explaining the importance of using social media for a restaurant.`,
-  `fathers day for restaurant template instagram post`,
-  `create an instagram post recruiting fosters for a small dog rescue`,
-];
-
-const recipieNames = [
-  "SquareMinimalFrame",
-  "SquareWithBgImage",
-  "BottomBorderGradient",
-  "Glassmorphic",
-  "Watercolor",
-  "CenterHero",
-  "Polaroid",
-  "ContentImage1",
-  "Thoughts",
-  "StructuredLines",
-  "Fuzz",
-];
-
-const allPairs = [
-  ...losses.map((pair) => ({ ...pair, result: "Loss" })),
-  ...wins.map((pair) => ({ ...pair, result: "Win" })),
-];
-
-let currentIndex = 0;
-let filteredPairs = allPairs;
-
-const usImage = document.getElementById("usImage");
-const opponentImage = document.getElementById("opponentImage");
-const resultElement = document.getElementById("result");
-const modelElement = document.getElementById("model");
-const promptElement = document.getElementById("prompt");
-const recipieElement = document.getElementById("recipie");
-const nextButton = document.getElementById("nextButton");
-const prevButton = document.getElementById("prevButton");
-const jumpInput = document.getElementById("jumpInput");
-const jumpButton = document.getElementById("jumpButton");
-const resultCountElement = document.getElementById("resultCount");
-const filterRadios = document.getElementsByName("filter");
-
-function updateResultCount() {
-  resultCountElement.textContent = `Viewing result ${currentIndex + 1}/${
-    filteredPairs.length
-  }`;
+// Function to remove duplicates from an array based on the 'us' property
+function removeDuplicates(arr) {
+  const seen = new Set();
+  return arr.filter((item) => {
+    const duplicate = seen.has(item.us);
+    seen.add(item.us);
+    return !duplicate;
+  });
 }
 
-function showPair(index) {
-  const normalizedIndex = (index + filteredPairs.length) % filteredPairs.length;
-  const pair = filteredPairs[normalizedIndex];
-  usImage.src = `images/${stripNumberFromFilename(pair.us)}`;
-  opponentImage.src = `images/${stripNumberFromFilename(pair.opponent)}`;
-  resultElement.textContent = `Result: ${pair.result}`;
-  modelElement.textContent = `${pair.model}`;
+// Remove duplicates from wins and losses arrays
+const uniqueWins = removeDuplicates(wins);
+const uniqueLosses = removeDuplicates(losses);
 
-  const promptIndex = parseInt(
-    pair.us.slice(pair.us.indexOf("prompt_") + 7, pair.us.indexOf("-layout"))
-  );
-  promptElement.textContent = `${goldenPrompts200[promptIndex]}`;
+// Create the content for the new file
+const newFileContent = `
+const uniqueWins = ${JSON.stringify(uniqueWins, null, 2)};
 
-  const recipieIndex = parseInt(
-    pair.us.slice(pair.us.indexOf("layout_") + 7, pair.us.indexOf("."))
-  );
-  recipieElement.textContent = `${recipieNames[recipieIndex]}`;
+const uniqueLosses = ${JSON.stringify(uniqueLosses, null, 2)};
 
-  currentIndex = normalizedIndex;
-  updateResultCount();
-}
+module.exports = { uniqueWins, uniqueLosses };
+`;
 
-function filterPairs() {
-  const filterValue = document.querySelector(
-    'input[name="filter"]:checked'
-  ).value;
-  if (filterValue === "all") {
-    filteredPairs = allPairs;
+// Write the new content to a file
+fs.writeFile("uniqueResults.js", newFileContent, (err) => {
+  if (err) {
+    console.error("Error writing file:", err);
   } else {
-    filteredPairs = allPairs.filter(
-      (pair) => pair.result.toLowerCase() === filterValue
-    );
-  }
-  currentIndex = 0;
-  showPair(currentIndex);
-}
-
-nextButton.addEventListener("click", () => {
-  showPair(currentIndex + 1);
-});
-
-prevButton.addEventListener("click", () => {
-  showPair(currentIndex - 1);
-});
-
-jumpButton.addEventListener("click", () => {
-  const jumpTo = parseInt(jumpInput.value) - 1;
-  showPair(jumpTo);
-});
-
-jumpInput.addEventListener("keyup", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    const jumpTo = parseInt(this.value) - 1;
-    showPair(jumpTo);
+    console.log("File successfully written: uniqueResults.js");
   }
 });
-
-filterRadios.forEach((radio) => {
-  radio.addEventListener("change", filterPairs);
-});
-
-document.addEventListener("keydown", function (event) {
-  switch (event.key) {
-    case "ArrowLeft":
-      showPair(currentIndex - 1);
-      break;
-    case "ArrowRight":
-      showPair(currentIndex + 1);
-      break;
-  }
-});
-
-// Show the first pair when the page loads
-filterPairs();
-
-function stripNumberFromFilename(filename) {
-  return filename.slice(filename.indexOf("_") + 1);
-}

@@ -9,6 +9,15 @@
   <body>
     <div class="container">
       <h1>Image Comparison</h1>
+      <div id="filterContainer">
+        <label>
+          <input type="radio" name="filter" value="all" checked /> All
+        </label>
+        <label> <input type="radio" name="filter" value="win" /> Wins </label>
+        <label>
+          <input type="radio" name="filter" value="loss" /> Losses
+        </label>
+      </div>
       <div id="imageContainer">
         <div class="image-wrapper">
           <img id="usImage" src="" alt="Our Image" />
@@ -32,7 +41,18 @@
         <b>Recipie:</b>
         <p id="recipie"></p>
       </span>
-      <button id="nextButton">Next Pair</button>
+      <p id="resultCount"></p>
+      <div id="navigationContainer">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+        <input
+          type="number"
+          id="jumpInput"
+          min="1"
+          placeholder="Jump to result"
+        />
+        <button id="jumpButton">Jump to Result</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
