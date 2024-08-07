@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Comparison App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Image Comparison</h1>
+      <div id="imageContainer">
+        <div class="image-wrapper">
+          <img id="usImage" src="" alt="Our Image" />
+          <p>Our Image</p>
+        </div>
+        <div class="image-wrapper">
+          <img id="opponentImage" src="" alt="Opponent Image" />
+          <p>Opponent Image</p>
+        </div>
+      </div>
+      <p id="result"></p>
+      <span class="row">
+        <b>Prompt:</b>
+        <p id="prompt"></p>
+      </span>
+      <span class="row">
+        <b>Opponent model:</b>
+        <p id="model"></p>
+      </span>
+      <button id="nextButton">Next Pair</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
