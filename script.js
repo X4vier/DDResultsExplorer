@@ -3043,6 +3043,20 @@ const goldenPrompts200 = [
   `create an instagram post recruiting fosters for a small dog rescue`,
 ];
 
+const recipieNames = [
+  "SquareMinimalFrame",
+  "SquareWithBgImage",
+  "BottomBorderGradient",
+  "Glassmorphic",
+  "Watercolor",
+  "CenterHero",
+  "Polaroid",
+  "ContentImage1",
+  "Thoughts",
+  "StructuredLines",
+  "Fuzz",
+];
+
 const allPairs = [
   ...losses.map((pair) => ({ ...pair, result: "Loss" })),
   ...wins.map((pair) => ({ ...pair, result: "Win" })),
@@ -3054,6 +3068,7 @@ const opponentImage = document.getElementById("opponentImage");
 const resultElement = document.getElementById("result");
 const modelElement = document.getElementById("model");
 const promptElement = document.getElementById("prompt");
+const recipieElement = document.getElementById("recipie");
 const nextButton = document.getElementById("nextButton");
 
 function showNextPair() {
@@ -3068,6 +3083,11 @@ function showNextPair() {
       pair.us.slice(pair.us.indexOf("prompt_") + 7, pair.us.indexOf("-layout"))
     );
     promptElement.textContent = `${goldenPrompts200[promptIndex]}`;
+
+    const recipieIndex = parseInt(
+      pair.us.slice(pair.us.indexOf("layout_") + 7, pair.us.indexOf("."))
+    );
+    recipieElement.textContent = `${recipieNames[recipieIndex]}`;
 
     currentIndex++;
   } else {
